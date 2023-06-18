@@ -9,3 +9,6 @@ game engine frontend tutorial
 + Chapter 03
 > React Tutorial (w3schools.com)
 > [React Tutorial](https://www.w3schools.com/REACT/default.asp)
++ Chapter 04
+> React Pixi Reference
+> [React Pixi](https://pixijs.io/pixi-react/)
