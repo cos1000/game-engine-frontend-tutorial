@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { TestingComponent } from './testing';
+import { TestingRouter } from './testing';
 
 /*
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -28,7 +28,10 @@ myElement = <h1>{(x) < 10 ? "Hello" : "Goodbye"}</h1>;
 root.render(myElement);
 // Show: Hello
 
-root.render(<TestingComponent color="blue" updatedColor="red" />); 
+//root.render(<TestingComponent color="blue" updatedColor="red" />); 
+//root.render(<TestingHook />); 
+root.render(<TestingRouter />); 
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
