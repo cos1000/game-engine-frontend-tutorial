@@ -9,7 +9,7 @@ export const QuickStartComponent = () =>
   return (
     <Stage>
       <Sprite
-        image="https://pixijs.io/pixi-react/img/bunny.png"
+        image="./img/2000_Actor1.png"
         x={400}
         y={270}
         anchor={{ x: 0.5, y: 0.5 }}
