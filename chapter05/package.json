@@ -1,16 +1,25 @@
 {
   "name": "chapter05",
-  "version": "0.0.1",
-  "description": "npm + pixijs + webpack tutorial",
-  "main": "index.js",
+  "version": "0.1.2",
+  "description": "npm + webpack tutorial",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack", 
+    "serve": "webpack serve"
   },
   "keywords": [
     "npm",
-    "pixijs",
     "webpack"
   ],
   "author": "Matt",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
