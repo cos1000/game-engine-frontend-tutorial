@@ -7,6 +7,8 @@ let app = new PIXI.Application({
   resolution: 1, // 分辨率 
   backgroundColor: 0x00ff00, 
   autoResize: true, 
+  backgroundAlpha: 0, 
+  resizeTo: window, 
 });
 
 document.body.appendChild(app.view);

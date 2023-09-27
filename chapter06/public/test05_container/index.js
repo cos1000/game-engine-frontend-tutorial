@@ -5,7 +5,7 @@ let app = new PIXI.Application({
   antialias: true, // 反鋸齒
   transparent: true, // 透明度
   resolution: 1, // 分辨率 
-  backgroundColor: 0x00ff00, 
+  //backgroundColor: 0x00ff00, 
   autoResize: true, 
 });
 
@@ -14,6 +14,15 @@ document.body.appendChild(app.view);
 window.onresize = function (event){
   app.renderer.resize(window.innerWidth,window.innerHeight);
 };
+
+const particleContainer = new PIXI.ParticleContainer(10000, {
+  scale: true,
+  position: true,
+  rotation: true,
+  uvs: true,
+  alpha: true,
+});
+app.stage.addChild(particleContainer);
 
 const container = new PIXI.Container();
 app.stage.addChild(container);
@@ -36,4 +45,5 @@ function createSprite() {
   container.rotation = 45;
   container.x = 100;
   container.y = 100;
+  //particleContainer.addChild(sample); 
 }
