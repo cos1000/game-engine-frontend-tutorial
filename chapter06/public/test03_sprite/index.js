@@ -22,17 +22,27 @@ createSprite2();
 createSprite3();
 
 function createSprite() {
-  const sample = PIXI.Sprite.from("sample.png");
-  sample.anchor.set(0.5);
-  sample.scale.set(0.8 + Math.random() * 0.3);
-  sample.x = Math.floor(Math.random() * app.screen.width);
-  sample.y = Math.floor(Math.random() * app.screen.height);
-  sample.blendMode = PIXI.BLEND_MODES.ADD;
-  sample.direction = Math.random() * Math.PI * 2;
-  sample.turningSpeed = Math.random() - 0.8;
-  sample.speed = 2 + Math.random() * 2;
-  sample.tint = Math.random() * 0xFFFFFF;
-  app.stage.addChild(sample);  
+  const sample = PIXI.Texture.from("sample.png");
+  const sample2 = PIXI.Texture.from("sample2.png");
+  const character = new PIXI.Sprite(sample);  
+  character.anchor.set(0.5);
+  character.scale.set(0.8 + Math.random() * 0.3);
+  character.x = Math.floor(Math.random() * app.screen.width);
+  character.y = Math.floor(Math.random() * app.screen.height);
+  character.blendMode = PIXI.BLEND_MODES.ADD;
+  character.direction = Math.random() * Math.PI * 2;
+  character.turningSpeed = Math.random() - 0.8;
+  character.speed = 2 + Math.random() * 2;
+  character.tint = Math.random() * 0xFFFFFF;
+  app.stage.addChild(character);  
+
+  let isTurnOn = true;
+  character.eventMode = 'static';
+  character.cursor = 'pointer';
+  character.on('pointertap', () => {
+    isTurnOn = !isTurnOn; 
+    character.texture = isTurnOn ? sample : sample2; 
+  }); 
 }
 
 function createSprite2() {

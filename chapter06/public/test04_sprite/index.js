@@ -5,7 +5,7 @@ let app = new PIXI.Application({
   antialias: true, // 反鋸齒
   transparent: true, // 透明度
   resolution: 1, // 分辨率 
-  backgroundColor: 0x00ff00, 
+  //backgroundColor: 0x00ff00, 
   autoResize: true, 
 });
 
@@ -18,8 +18,10 @@ window.onresize = function (event){
 PIXI.Assets.load("character.json").then(createSprite);
 const frames = ["main01.png", "main02.png", "main03.png"]; 
 
+PIXI.Assets.load("character.json").then(createSprite2);
+
 //app.ticker.add(createSprite); 
-createSprite(); 
+//createSprite(); 
 
 function createSprite() {
   frames.forEach(element => {
@@ -35,3 +37,18 @@ function createSprite() {
     app.stage.addChild(sample);        
   });
 }
+
+function createSprite2() 
+{
+  const textures = []; 
+  textures.push(PIXI.Texture.from('main01.png')); 
+  textures.push(PIXI.Texture.from('main02.png')); 
+  textures.push(PIXI.Texture.from('main03.png'));
+  const animatedSprite = new PIXI.AnimatedSprite(textures); 
+  animatedSprite.x = 10;
+  animatedSprite.y = 10;
+  animatedSprite.gotoAndPlay(0); 
+  animatedSprite.animationSpeed = 0.1;
+  app.stage.addChild(animatedSprite);  
+}
+
